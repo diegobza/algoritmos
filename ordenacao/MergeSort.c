@@ -64,24 +64,25 @@ void mergeSort(int V[], int n)
     mergeSort(E, meio);
     mergeSort(D, n - meio);
     merge(E, meio, D, n - meio, V);
-    
+
     free(E);
     free(D);
 }
 
 int main()
 {
-    int tam = 10, i;
-    int *V = (int *) malloc(tam * sizeof(int));
+    int i, n = 10;
+    int *V = (int *) malloc(n * sizeof(int));
 
     srand(time(NULL));
 
-    for (i = 0; i < tam; i++)
+    for (i = 0; i < n; i++)
         V[i] = rand() % 1001 + (-500);
     printf("ORIGINAL: ");
-    printArray(V, tam);
-    mergeSort(V, tam);
+    printArray(V, n);
+    mergeSort(V, n);
     printf("ORDENADO: ");
-    printArray(V, tam);
+    printArray(V, n);
+
     return 0;
 }
