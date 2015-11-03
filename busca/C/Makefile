@@ -7,10 +7,10 @@ all: busca
 busca: $(OBJECTS)
 	gcc -o busca busca.o linearSearch.o
 
-busca.o:
+busca.o: busca.c
 	gcc $(CFLAGS) busca.c -o busca.o -c
 
-linearSearch.o:
+linearSearch.o: linearSearch.c
 	gcc $(CFLAGS) linearSearch.c -o linearSearch.o -c
 
 clean:
